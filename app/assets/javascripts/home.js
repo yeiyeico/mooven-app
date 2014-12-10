@@ -1,7 +1,6 @@
 
 $.getJSON( "/points.json", function(data){
   var list_points = [];
-  console.log(data);
 
   for(i = 0; i < data.length; i++){
     var current_point = data[i]; 
@@ -12,8 +11,13 @@ $.getJSON( "/points.json", function(data){
                       "</li>" ;
   }
 
-  $( "<ul/>", {
-    "class": "my-new-list",
-    html: list_points.join( "" )
-  }).appendTo( "body" );
+  // $( "<ul/>", {
+  //   "class": "my-new-list",
+  //   html: list_points.join( "" )
+  // }).appendTo( "body" );
 });
+
+// Send the request
+$.post('/points.json', data, function(response) {
+    // Do something with the request
+}, 'json');
