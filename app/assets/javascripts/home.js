@@ -1,6 +1,13 @@
 
-var list_points = [];
 
+function showPoints(currentpoint){
+  var point = 
+     "<li> <input type='hidden' value='"+ currentpoint['id'] + "'>" + "Address:" + currentpoint['address'] + "<br>" + "Name:" + currentpoint['name'] + "<br>" 
+     + "logitude:" + currentpoint['longitude'] + "<br>" + "latitude:" +currentpoint['latitude'] + "<br>" 
+     + "<a class='delete_btn' href='#' data-id='"+ currentpoint['id'] + "'>"+ "delete" + "</a>" + "</li>";
+
+    $(point).appendTo("body");
+}
 
 $.getJSON( "/points.json", function(data){
   for(i = 0; i < data.length; i++){
@@ -8,14 +15,6 @@ $.getJSON( "/points.json", function(data){
     showPoints(current_point);
   }
 });
-
-function showPoints(currentpoint){
-  list_points.push(
-     "<li>" + "Address:" + currentpoint['address'] + "<br>" + "Name:" + currentpoint['name'] + "<br>" 
-     + "logitude:" + currentpoint['longitude'] + "<br>" + "latitude:" +currentpoint['latitude'] + "</li>");
-
-    $( "<ul/>", {"class": "new_point", html: list_points.join("")}).appendTo("body");
-}
 
 function savePointForm(){
   event.preventDefault();
@@ -31,3 +30,18 @@ function savePointForm(){
 
 $('#new_point').submit(savePointForm);
 
+
+$(document).on('click','.delete_btn', function(event){
+  $.ajax({
+         type: "POST",
+         url: "http://localhost:3000/points/"+ event.target.dataset.id,
+         dataType: "json",
+         data: {
+          "_method":"delete"
+          },
+          success: function(){
+             event.target.parentElement.remove();
+          }
+     });
+  event.preventDefault();
+});
