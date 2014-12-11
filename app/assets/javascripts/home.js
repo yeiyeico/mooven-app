@@ -1,23 +1,33 @@
 
-$.getJSON( "/points.json", function(data){
-  var list_points = [];
+var list_points = [];
 
+
+$.getJSON( "/points.json", function(data){
   for(i = 0; i < data.length; i++){
     var current_point = data[i]; 
-    list_points[i] =  "<li>" + "Address:" + current_point['address'] + "<br>" 
-                             + "Name:" + current_point['name'] + "<br>" 
-                             + "logitude:" + current_point['longitude'] + "<br>" 
-                             + "latitude:" +current_point['latitude'] +
-                      "</li>" ;
+    showPoints(current_point);
   }
-
-  // $( "<ul/>", {
-  //   "class": "my-new-list",
-  //   html: list_points.join( "" )
-  // }).appendTo( "body" );
 });
 
-// Send the request
-$.post('/points.json', data, function(response) {
-    // Do something with the request
-}, 'json');
+function showPoints(currentpoint){
+  list_points.push(
+     "<li>" + "Address:" + currentpoint['address'] + "<br>" + "Name:" + currentpoint['name'] + "<br>" 
+     + "logitude:" + currentpoint['longitude'] + "<br>" + "latitude:" +currentpoint['latitude'] + "</li>");
+
+    $( "<ul/>", {"class": "new_point", html: list_points.join("")}).appendTo("body");
+}
+
+function savePointForm(){
+  event.preventDefault();
+    var form = $(this); /* this en un evento 'submit' es el form */
+    var data = form.serialize();
+    var url = 'http://localhost:3000/points.json';  
+    $.post(url, data).done(function(response){
+      showPoints(response);
+    }).fail( function(){
+       
+    });
+};
+
+$('#new_point').submit(savePointForm);
+

@@ -4,11 +4,8 @@ class PointsController < ApplicationController
   # GET /points
   # GET /points.json
   def index
-    @points = Point.all
-
-    respond_to do |format|
-      format.json {render json: @points}
-    end
+    @points = Point.all 
+      render json: @points
   end
 
   # GET /points/1
@@ -30,16 +27,13 @@ class PointsController < ApplicationController
   def create
     @point = Point.new(point_params)
 
-    respond_to do |format|
-      if @point.save
-        format.html { redirect_to @point, notice: 'Point was successfully created.' }
-        format.json { render :show, status: :created, location: @point }
+    if @point.save
+        render json: @point 
       else
         format.html { render :new }
         format.json { render json: @point.errors, status: :unprocessable_entity }
       end
-    end
-  end
+end
 
   # PATCH/PUT /points/1
   # PATCH/PUT /points/1.json
