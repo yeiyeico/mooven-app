@@ -31,7 +31,7 @@
 		<article class="userpanel-content">
 			<nav class="main-nav-left">
 					<ol>
-						<li class="item-usernav"><a href="#">Create a route »</a></li>
+						<li class="item-usernav"><a  class="active" href="#">Create a route »</a></li>
 						<li class="item-usernav"><a href="#">View all my routes »</a></li>
 						<li class="item-usernav"><a href="#">People in my routes »</a></li>
 					</ol>
@@ -39,9 +39,9 @@
 			<div id="content-create-route" class="content-right">
 				<form id="create-route-from">
 					<label>Route Name:</label>
-					<input type="text" id="point_name" name="route_name" required>
+					<input type="text" id="itinerary_name" name="route_name" required>
 					<label>Available seats:</label>
-					<select class="seats-available" name="seats">
+					<select id="seats" class="seats-available" name="seats">
 						<option value="1">1</option>
 						<option value="2">2</option>
 						<option value="3">3</option>
@@ -67,10 +67,11 @@
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache.min.js"></script>
 	<script src="http://maps.googleapis.com/maps/api/js"></script>
-		<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
 	<script type="text/javascript" src="js/formValidation/validation.js"></script>
-	<script type="text/javascript" src="js/home.js"></script>
-	<script type="text/javascript" src="js/map.js"></script>
+	<script type="text/javascript" src="js/itinerary.js"></script>
+	<script type="text/javascript" src="js/points.js"></script>
+	<script type="text/javascript" src="js/googlemaps_api.js"></script>
 	
 </body>
 </html>

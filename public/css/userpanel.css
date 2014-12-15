@@ -25,6 +25,10 @@ header#user_header{
   border-bottom: 1px solid #323232;
 }
 
+.user_nav{
+  float: right;
+}
+
 h2.title-user{
   font-size: 36px;
   color: #89E90C;
@@ -68,11 +72,11 @@ li.item-usernav{
 
 }
 
-.item-usernav a:hover{
+.item-usernav a:hover, .item-usernav a.active{
   background-color: rgba(170,232,57, .2);
 }
 
-input#point_name{
+input#itinerary_name{
   width        : 350px;
   background   : transparent;
   border       : none;
