@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mooven - Collaborative Routes</title>
+	<!-- css styesheets mooven -->
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/front.css">
+</head>
+<body>
+	<div id="tooltip_message_name"></div>
+	<div id="tooltip_message_address"></div>
+	<div id="tooltip_message_email"></div>
+	<div id="tooltip_message_password"></div>
+	<!-- main header no login -->
+	<header id="main_header">
+		<h1 class="logo"><a href="#">MOOVEN</a></h1>
+		<nav class="main_nav">
+			<ol>
+				<li class ="item-menu"><a id="home_btn" 	href="#">Home 	 </a></li>
+				<li class ="item-menu"><a id="login_btn" 	href="login.html">Login 	 </a></li>
+				<li class="item-menu">
+					<a id="regiter_btn" href="#">Register</a>
+					<ol class="sub-nav">
+						<li class="item-submenu"><a href="#" id="company_register">Company</a></li>
+						<li class="item-submenu"><a href="#" id="employee_register">Employee</a></li>
+					</ol>
+				</li>
+			</ol>
+		</nav>
+	</header>
+	<!-- main home section -->
+	<section id="main_home" class="middle">
+
+		<header>
+			<figure class="icoMooven"><img src="images/logo.png"/></figure>
+			<div class="green_line"></div>
+		</header>
+		<h2 class="txt_titles">The collaborative way to move<br/> your employees in the city.</h2>
+		<footer class="footer_home">
+			<a class="generic_btn" href="#">Register your company now!!</a>
+			<p class="txt_bottom_btn">trial version 1 month</p>	
+		</footer>
+	</section>
+	<!-- end main section - register company section -->
+	<section id="register_company" class="middle">
+		<article class="left_column">
+			<figure class="logoMooven_inside"><img src="images/logo.png"/></figure>
+			<h3 class="txt_inside_titles">Phasellus Molestie Magna Non Est Bibendum Non.</h3>
+			<p class="txt_descrip">Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio. Proin quis tortor orci. ante, ac egestas est urna sit amet arcu.</p>
+		</article>
+		<article class="right_column">
+			<h3 class="title_form">I'm a company!!</h3>
+			<form id="form_company" name="companyform" action="" method="POST" onsubmit="return onSubmitCompany()">
+				<label>Company Name:</label>
+				<input class="text_field" type="text" id="company_name" name="name" onblur="basicFieldValidate(this)" >
+				<label>Address:</label>
+				<input class="text_field" type="text" id="company_address" name="address" onblur="basicFieldValidate(this)" >
+				<label>Number of Employees:</label>
+				<input type="radio" name="number_employees"   value="10" checked><span>10 - 30</span>
+				<input type="radio" name="number_employees"   value="30"><span>30 - 50</span>
+				<input type="radio" name="number_employees"   value="50"><span>50 - 80</span>
+				<input type="radio" name="number_employees"  value="100"><span>  + 100</span>
+				<label>E-mail:</label>
+				<input class="text_field" type="email" id="company_email" name="email" onblur="emailValidate(this)" >
+				<label>Password:</label>
+				<input class="text_field" type="password" id="company_password" name="password" onblur="passwordValidate(this)" >
+				<button type="submit" class="generic_submit" id="submit_company">REGISTER</button>
+			</form>
+		</article>
+	</section>
+	<!-- end register company section - register employee section -->
+	<section id="register_employee" class="middle">
+		<article class="left_column">
+			<figure class="logoMooven_inside"><img src="images/logo.png"/></figure>
+			<h3 class="txt_inside_titles">Phasellus Molestie Magna Non Est Bibendum Non.</h3>
+			<p class="txt_descrip">Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio. Proin quis tortor orci. ante, ac egestas est urna sit amet arcu.</p>
+			<a class="generic_btn" href="#">Log In as a Employee!</a>
+		</article>
+		<article class="right_column">
+			<div id="tooltip_message_name"></div>
+			<div id="tooltip_message_address"></div>
+			<div id="tooltip_message_email"></div>
+			<div id="tooltip_message_password"></div>
+			<h3 class="title_form">I'm a Employee!!</h3>
+			<form id="form_employee" name="employeeform" action="" method="POST" onsubmit="return onSubmitEmployee()">
+				<label>Name:</label>
+				<input class="text_field" type="text" id="employee_name" name="name" onblur="basicFieldValidate(this)" >
+				<label>Lastname:</label>
+				<input class="text_field" type="text" id="employee_lastname" name="lastname" onblur="basicFieldValidate(this)" >
+				<label>Company:</label>
+				<select class="form-select" name="company_database" placeholder="Select your company...">
+				  <option value="value1">company name 1</option>
+				</select>
+				<label>Are you looking for:</label>
+				<input type="radio" name="number_employees"   value="10" checked><span>I have a car</span>
+				<input type="radio" name="number_employees"   value="30"><span>I need a car</span>
+				<label>E-mail:</label>
+				<input class="text_field" type="email" id="company_email" name="email" onblur="emailValidate(this)" >
+				<label>Password:</label>
+				<input class="text_field" type="password" id="company_password" name="password" onblur="passwordValidate(this)" >
+				<button type="submit" class="generic_submit" id="submit_employee">REGISTER</button>
+			</form>
+		</article>
+	</section>
+	<!-- main and general footer -->
+	<footer id="main_footer">
+		<h6>All Rights Reserved 2014 ®</h6>
+	</footer>
+	<!-- scripts -->
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache.min.js"></script>
+
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/formValidation/validation.js"></script>
+	<script type="text/javascript" src="js/formValidation/company_validation.js"></script>
+	
+</body>
+</html>

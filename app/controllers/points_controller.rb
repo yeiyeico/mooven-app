@@ -1,4 +1,5 @@
 class PointsController < ApplicationController
+  require "geokit"
   before_action :set_point, only: [:show, :edit, :update, :destroy]
 
   # GET /points
@@ -57,6 +58,17 @@ end
       format.html { redirect_to points_url, notice: 'Point was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def coordinates
+    @point = Point.new
+    @point.address = params[:address]
+    # @point.update(point_params)
+    address_field = Geokit::Geocoders::GoogleGeocoder.geocode @point.address
+    @point.latitude  = address_field.lat
+    @point.longitude = address_field.lng
+    # renderize the value in json
+    render json: @point 
   end
 
   private

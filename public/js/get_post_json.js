@@ -1,5 +1,4 @@
 
-
 function showPoints(currentpoint){
   var point = 
      "<li> <input type='hidden' value='"+ currentpoint['id'] + "'>" + "Address:" + currentpoint['address'] + "<br>" + "Name:" + currentpoint['name'] + "<br>" 
@@ -45,3 +44,16 @@ $(document).on('click','.delete_btn', function(event){
      });
   event.preventDefault();
 });
+
+$('#point_address').blur(function(){
+    $.getJSON( "/points/coordinates.json", function(search_point){
+      point_address= search_point['address'];
+     console.log('point_address');
+    }
+    event.preventDefault();
+});
+
+
+
+
+

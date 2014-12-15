@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mooven - Collaborative Routes</title>
+	<!-- css styesheets mooven -->
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/userpanel.css">
+</head>
+<body>
+	<div id="tooltip_message_name"></div>
+	<div id="tooltip_message_address"></div>
+	<div id="tooltip_message_email"></div>
+	<div id="tooltip_message_password"></div>
+	<!-- main header no login -->
+	<header id="user_header">
+		<h1 class="logo"><a href="#">MOOVEN</a></h1>
+		<nav class="user_nav">
+			<ol>
+				<li class ="item-menu"><figure class="avatar-top"><img src="images/avatar50x50.jpg"/></figure></li>
+				<li class ="item-menu">Angela pinzon G</li>
+				<li class ="item-menu"><a href="#">Logout</a></li>
+			</ol>
+		</nav>
+	</header>
+	<!-- main home section -->
+	<section id="main-userpanel" class="middle">
+		<header class="user-header">
+			<h2 class="title-user">Hello! UserName</h2>
+			<h3 class="descrip-user">it’s time for create your first route »</h3>
+		</header>
+		<article class="userpanel-content">
+			<nav class="main-nav-left">
+					<ol>
+						<li class="item-usernav"><a href="#">Create a route »</a></li>
+						<li class="item-usernav"><a href="#">View all my routes »</a></li>
+						<li class="item-usernav"><a href="#">People in my routes »</a></li>
+					</ol>
+			</nav>
+			<div id="content-create-route" class="content-right">
+				<form id="create-route-from">
+					<label>Route Name:</label>
+					<input type="text" id="point_name" name="route_name" required>
+					<label>Available seats:</label>
+					<select class="seats-available" name="seats">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+					</select>
+					<div class="dotted-line"></div>
+					<label class="startpoint">Start Point</label>
+					<input class="routefield" type="text" id="point_a" name="point_a">
+					<label class="endpoint">End Point</label>
+					<input class="routefield" type="text" id="point_b" name="point_b">					
+					<div id="container-map"></div>
+					<button type="submit" class="generic_submit" id="submit_route">CREATE ROUTE</button>
+				</form>
+			</div>
+		</article>
+
+	</section>
+	<!-- main and general footer -->
+	<footer id="main_footer">
+		<h6>All Rights Reserved 2014 ®</h6>
+	</footer>
+	<!-- scripts -->
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache.min.js"></script>
+	<script src="http://maps.googleapis.com/maps/api/js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/formValidation/validation.js"></script>
+	<script type="text/javascript" src="js/home.js"></script>
+	<script type="text/javascript" src="js/map.js"></script>
+	
+</body>
+</html>

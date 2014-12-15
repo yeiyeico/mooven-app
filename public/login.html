@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mooven - Collaborative Routes</title>
+	<!-- css styesheets mooven -->
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/front.css">
+</head>
+<body>
+	<div id="tooltip_message_name"></div>
+	<div id="tooltip_message_address"></div>
+	<div id="tooltip_message_email"></div>
+	<div id="tooltip_message_password"></div>
+	<!-- main header no login -->
+	<header id="main_header">
+		<h1 class="logo"><a href="#">MOOVEN</a></h1>
+		<nav class="main_nav">
+			<ol>
+				<li class ="item-menu"><a id="home_btn" 	href="index.html">Home 	 </a></li>
+				<li class ="item-menu"><a id="login_btn" 	href="login.html">Login 	 </a></li>
+				<li class="item-menu">
+					<a id="regiter_btn" href="#">Register</a>
+					<ol class="sub-nav">
+						<li class="item-submenu"><a href="#" id="company_register">Company</a></li>
+						<li class="item-submenu"><a href="#" id="employee_register">Employee</a></li>
+					</ol>
+				</li>
+			</ol>
+		</nav>
+	</header>
+	<!-- main home section -->
+	<section id="login" class="middle">
+		<figure class="logoMooven_inside"><img src="images/logo.png"/></figure>
+		<form id="form_login" name="login" method="POST" onsubmit="return onSubmitLogin()">
+			<label>Company:</label>
+			<select class="form-select" name="company_database" placeholder="Select your company...">
+			  <option value="value1">company name 1</option>
+			</select>
+			<label>E-mail:</label>
+			<input class="text_field" type="email" id="email" name="email" onblur="emailValidate(this)" >
+			<label>Password:</label>
+			<input class="text_field" type="password" id="password" name="password" onblur="passwordValidate(this)" >
+			<button type="submit" class="generic_submit" id="submit_login">LOGIN</button>
+		</form>
+	</section>
+	<!-- main and general footer -->
+	<footer id="main_footer">
+		<h6>All Rights Reserved 2014 ®</h6>
+	</footer>
+	<!-- scripts -->
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache.min.js"></script>
+
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/validation.js"></script>
+	<script type="text/javascript" src="js/company_validation.js"></script>
+	
+</body>
+</html>

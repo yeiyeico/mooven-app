@@ -1,0 +1,182 @@
+body{
+  background             : url('../images/bg.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size   : cover;
+  -o-background-size     : cover;
+  background-size        : cover;
+  width                  : 100%;
+  height                 : 100%;
+  font-family            : 'HelveticaRoman', sans-serif;
+  color                  : #FFF;
+  font-weight            : normal;
+  font-size              : 1em;
+}
+
+/*------------------ main nav no login ------------------------*/
+
+header#main_header{
+  background-color: rgba(123, 123, 123, 0.3);
+  width           : 100%;
+  height          : 60px;
+}
+
+.main_nav{
+  float   : right;
+  margin  : 25px 50px;
+  position: relative;
+}
+
+li.item-menu{
+  float      : left;
+  margin-left:40px;
+}
+
+li.item-menu a{
+  text-decoration: none;
+  color          : #FFF;
+}
+
+li.item-menu a:hover{
+  color: #AAE839;
+}
+
+ol.sub-nav{
+  background-color: rgba(123, 123, 123, 0.3);
+  position        : absolute;
+  top             : 37px;
+  right           : 0px; 
+  display         : none;
+}
+
+li.item-submenu a{
+  padding: 15px 35px;
+  display: block;
+}
+
+li.item-submenu a:hover{
+  background-color: rgba(170,232,57, .2);
+}
+
+/*------------------ main home section ------------------------*/
+
+#main_home{
+  font-family: 'HelveticaThin', sans-serif;
+  font-weight: normal;
+}
+
+.green_line{
+  width           : 60%;
+  height          : 1px;
+  margin          : 0 auto;
+  background-color: #AAE839;
+}
+
+figure.icoMooven{
+  width  : 243px;
+  height : 110px;
+  margin : 0 auto;
+  padding: 20px 0px;
+}
+
+h2.txt_titles{
+  font-weight: normal;
+  font-size  : 2.813em;
+  text-align : center;
+  margin     : 50px 0px;
+}
+
+
+
+footer.footer_home{
+  text-align             : center;
+  padding-top            : 40px;
+}
+
+p.txt_bottom_btn{
+  font-size              : 0.85em;
+  margin-top             : 20px;
+  color                  : #9f9f9f;
+}
+
+/*------------------ login company styles -------------------*/
+
+#register_company, #register_employee{
+  margin-top             : 80px;
+  display: none;
+  overflow: hidden;
+}
+
+.left_column{
+  float                  : left;
+  width                  : 500px;
+}
+
+.right_column{
+  float                  : right;
+  width                  : 350px;
+}
+
+h3.txt_inside_titles{
+  font-size              : 2.250em;
+  font-family            : 'helveticaThin';
+  font-weight            : normal;
+  color                  : #FFF;
+  margin-top             : 35px;
+}
+
+p.txt_descrip{
+  margin-top             : 20px;
+  text-align             : justify;
+  padding-right          : 40px;
+  padding-bottom         : 30px;
+}
+
+/*------------------ company form ------------------------*/
+
+label{
+  display                : block;
+  font-family            : "helveticaThin";
+  font-weight            : normal;
+}
+
+input.text_field{
+  width                  : 350px;
+  height                 : 25px;
+  margin                 : 10px 0;
+}
+
+h3.title_form{
+  font-family   : 'helveticaThin';
+  font-weight   : normal;
+  font-size     : 2.250em;
+  color         : #AAE839;
+  letter-spacing: 1px;
+}
+
+#tooltip_message{
+  height: 30px;
+}
+
+#tooltip_message_email{
+  width           : 100px;
+  height          : 40px;
+  background-color: red;
+  position        : absolute;
+  top             : 403px;
+  right           : 94px;
+  display         : none;
+}
+
+.form-select{
+  -webkit-appearance: none;
+  width             : 350px;
+  height            : 30px;
+}
+
+/*------------------ login ------------------------*/
+#login{
+  width      : 400px;
+  margin     : 0 auto;
+  padding-top: 60px;
+}
+
