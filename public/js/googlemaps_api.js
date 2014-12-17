@@ -15,10 +15,16 @@ function initialize(point_lat, point_lng) {
     zoom: 9,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
+
+  var marker = new google.maps.Marker({
+      position: new google.maps.LatLng(point_lat, point_lng),
+  });
+
+
   
   var map = new google.maps.Map(document.getElementById("container-map"),mapOptions);
   directionsDisplay.setMap(map);
-
+  marker.setMap(map);
 }
 
 google.maps.event.addDomListener(window, 'load', initialize(point_lat, point_lng));

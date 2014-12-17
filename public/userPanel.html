@@ -18,25 +18,31 @@
 			<ol>
 				<li class ="item-menu"><figure class="avatar-top"><img src="images/avatar50x50.jpg"/></figure></li>
 				<li class ="item-menu">Angela pinzon G</li>
-				<li class ="item-menu"><a href="#">Logout</a></li>
+				<li class ="item-menu"><a href="login.html">Logout</a></li>
 			</ol>
 		</nav>
 	</header>
 	<!-- main home section -->
 	<section id="main-userpanel" class="middle">
 		<header class="user-header">
-			<h2 class="title-user">Hello! UserName</h2>
+			<h2 class="title-user">Hello! Angela</h2>
 			<h3 class="descrip-user">it’s time for create your first route »</h3>
 		</header>
 		<article class="userpanel-content">
 			<nav class="main-nav-left">
 					<ol>
-						<li class="item-usernav"><a  class="active" href="#">Create a route »</a></li>
-						<li class="item-usernav"><a href="#">View all my routes »</a></li>
-						<li class="item-usernav"><a href="#">People in my routes »</a></li>
+						<li class="item-usernav">
+						  <a class="route-link active" href="#create">Create a route »</a>
+						</li>
+						<li class="item-usernav">
+						  <a class='route-link' href="#list">View all my routes »</a>
+						</li>
+						<!-- <li class="item-usernav">
+							<a class='route-link' href="#people">People in my routes »</a>
+						</li> -->
 					</ol>
 			</nav>
-			<div id="content-create-route" class="content-right">
+			<div id="content-create-route" class="route content-right">
 				<form id="create-route-from">
 					<label>Route Name:</label>
 					<input type="text" id="itinerary_name" name="route_name" required>
@@ -56,22 +62,41 @@
 					<button type="submit" class="generic_submit" id="submit_route">CREATE ROUTE</button>
 				</form>
 			</div>
-		</article>
+			<div id="content-list-routes" class="route content-right" >
+				<ol class="all-routes">
+				</ol>
+			</div>
+			<div id="load_templates"></div>
 
+		</article>
 	</section>
-	<!-- main and general footer -->
-	<footer id="main_footer">
-		<h6>All Rights Reserved 2014 ®</h6>
-	</footer>
+
+   <script type="text/html" id='itinerary-template'>
+   	<li class="itinerary-item">
+   	   <article>
+   	      <header>
+   	         <h1 class="item-name">{{ itinerary_name }}</h1>
+   	         <h5 class="txt-seats">Available seats: {{ avaliable_seats }} </h5>
+   	      </header>
+   	      <div class="start_point_show">{{ start_point.address }}</div>
+   	      <div class="end_point_show">{{ end_point.address }}</div>
+   	      <footer>
+   	         <figure><img src="images/thumb_map.jpg" /></figure>
+   	      </footer>
+   	   </article>
+   	   <a href="#" class="deleteitinerary_btn" data-id = {{id }}> Delete Route</a> 
+   	</li>
+   </script>
 	<!-- scripts -->
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
 	<script src="http://maps.googleapis.com/maps/api/js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 	<script type="text/javascript" src="js/formValidation/validation.js"></script>
 	<script type="text/javascript" src="js/itinerary.js"></script>
 	<script type="text/javascript" src="js/points.js"></script>
 	<script type="text/javascript" src="js/googlemaps_api.js"></script>
-	
+	<script type="text/javascript" src="js/router.js"></script>
+	<script type="text/javascript" src="js/lightbox.js"></script>
 </body>
 </html>

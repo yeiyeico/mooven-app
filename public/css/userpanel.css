@@ -51,7 +51,7 @@ h3.descrip-user{
 }
 
 .content-right{
-  width: 700px;
+  width: 780px;
   float: left;
   padding-left: 30px;
   border-left: 1px solid #5B5D58;
@@ -105,19 +105,20 @@ label.startpoint{
   background: url('../images/icoPointA.png') no-repeat 0 0;
   display   : inline-block;
   padding   : 15px 5px 0 30px;
-  height    : 25px;
+  height    : 40px;
 }
 
 label.endpoint{
   background: url('../images/icoPointB.png') no-repeat 0 0;
   display   : inline-block;
   padding   : 15px 5px 0 30px;
-  height    : 25px;
-  margin-left: 25px;
+  height    : 40px;
+  margin-left: 40px;
 }
 
 input.routefield{
   width: 225px;
+  height: 30px;
   font-size: 14px;
   padding-left: 5px;
 }
@@ -134,3 +135,84 @@ input.routefield{
   height: 330px;
   margin-top: 20px; 
 }
+
+
+/*------------------------template styles item itinerary------------------------*/
+
+ol.all-routes{
+  overflow: hidden;
+}
+
+
+ol.all-routes li:nth-child(2n+1){
+  margin-left: 0px;
+}
+
+li.itinerary-item{
+  float: left;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.itinerary-item article{
+  border: 1px solid #515151;
+  padding: 10px;
+}
+
+.itinerary-item article header{
+  border-bottom: 1px dashed #515151;
+}
+
+h1.item-name{
+  color      : #AAE839;
+  font-size  : 23px;
+  font-weight: normal;
+  font-style : normal;
+}
+
+h5.txt-seats{
+  font-size  : 13px;
+  font-family: 'HelveticaRoman';
+  font-weight: normal;
+  font-style : normal;
+  color      : rgb(115, 114, 114);
+}
+
+.start_point_show{
+  background      : url('../images/pointA_small.png') no-repeat 2px 2px;
+  background-color: rgba(103, 162, 165, 0.10);
+  margin-top      : 10px;
+  height          : 30px;
+  padding-left    : 25px;
+  line-height     : 35px;
+  font-size       : 13px;
+  font-family     : 'HelveticaRoman';
+}
+
+.end_point_show{
+  background      : url('../images/pointB_small.png') no-repeat 2px 2px;
+  background-color: rgba(165, 228, 105, 0.10);
+  height          : 30px;
+  padding-left    : 25px;
+  line-height     : 35px;
+  font-size       : 13px;
+  font-family     : 'HelveticaRoman';
+  margin          : 5px 0;
+}
+
+a.deleteitinerary_btn{
+  background : url('../images/icoDelete.png')no-repeat 0 0;
+  opacity    : .5;
+  text-indent: -9999px;
+  display    : block;
+  height     : 20px;
+  width      : 20px;
+  float      : right;
+  margin-top : 10px;
+}
+
+a.deleteitinerary_btn:hover{
+  opacity: 1;
+}
+
+

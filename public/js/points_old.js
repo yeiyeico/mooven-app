@@ -11,10 +11,30 @@ $('#point_a, #point_b').blur(function(event){
   event.preventDefault();
 });
 
+// paint points in the body
+
+// function showPoints(currentpoint){
+//   var point = 
+//   "<li>" + "Address:" + currentpoint['address'] + "<br>" + "Name:" + currentpoint['name'] + "<br>" 
+//   + "logitude:" + currentpoint['longitude'] + "<br>" + "latitude:" +currentpoint['latitude'] + "<br>" 
+//   + "<a class='delete_btn' href='#' data-id='"+ currentpoint['id'] + "'>"+ "delete" + "</a>" + "</li>";
+
+//   $(point).appendTo("body");
+// }
+
+// getJSON for all the created points 
+
+// $.getJSON( "/points.json", function(data){
+//   for(i = 0; i < data.length; i++){
+//     var current_point = data[i]; 
+//     showPoints(current_point);
+//   }
+// });
+
 // Save a point in database with postJSON
 
 function savePointForm(event){
-  var form = $(this);
+  var form = $(this); /* this en un evento 'submit' es el form */
   var data = form.serialize();
   var url  = '/points.json';  
   $.post(url, data).done(function(response){
@@ -24,6 +44,7 @@ function savePointForm(event){
   });
   event.preventDefault();
 };
+
 
 // delete points function
 
