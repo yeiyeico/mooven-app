@@ -80,6 +80,7 @@ figure.icoMooven{
 }
 
 h2.txt_titles{
+  font-family     : 'helveticaThin';
   font-weight: normal;
   font-size  : 2.813em;
   text-align : center;

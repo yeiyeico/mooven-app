@@ -16,19 +16,14 @@ $('#form_login').bind('submit', function(event){
    var c_email    = document.getElementById('login_email');
    var c_password = document.getElementById('login_password');
 
-   // basic_fields = [c_company];
-
-   // for(i = 0; i < basic_fields.length; i++){
-   //    var basicFields_ok = basicFieldValidate(basic_fields[i]);
-   // }
-
-   var email_ok    = emailValidate(c_email);
-   var password_ok = passwordValidate(c_password);
-
    var form = $(this);
    var json = convertFormtoJson(form);
+   
+   json_company = JSON.parse(localStorage.getItem('employeeForm'));
 
-   if(email_ok === true && password_ok === true){     
+   if (json_company.email === "" && json_company.password === "") {
+      console.log("no field"); 
+   } else if(json_company.email === c_email.value && json_company.password === c_password.value){
       $.ajax({
          type: "GET",
          url: "/form.json",
@@ -37,6 +32,8 @@ $('#form_login').bind('submit', function(event){
       });
       localStorage.setItem('loginForm', JSON.stringify(json));
       window.location.href = "http://localhost:3000/userpanel.html";
+   }else{
+      console.log("no match"); 
    }
 
 });

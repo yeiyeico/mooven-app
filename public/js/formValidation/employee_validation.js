@@ -42,7 +42,7 @@ $('#form_employee').bind('submit', function(event){
 
       localStorage.setItem('employeeForm', JSON.stringify(json));
       console.log(json)
-      modal.open( {content: $("<p class='txt-modal'>Registro Exitoso! <br> Bienvenido "+ json.name +"</p>")}, "http://localhost:3000/login.html" );
+      modal.open( {content: $("<p class='txt-modal'>Registro Exitoso! <br> Bienvenido "+ json.name +"</p>")}, "http://localhost:3000/#login" );
    }
 
 });

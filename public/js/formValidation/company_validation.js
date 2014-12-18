@@ -2,12 +2,11 @@ function convertFormtoJson(form){
 	var array = $(form).serializeArray();
 	var json = {};
 
-	jQuery.each(array, function() {
+	$.each(array, function() {
 		json[this.name] = this.value || '';
 	});  
 	return json;
 }
-
 
 $('#form_company').bind('submit', function(event){
 	
@@ -39,8 +38,7 @@ $('#form_company').bind('submit', function(event){
 		});
 
 		localStorage.setItem('companyForm', JSON.stringify(json));
-		console.log(json)
-		modal.open(	{content: $("<p class='txt-modal'>Registro Exitoso! <br> Bienvenido "+ json.name +"</p>")}, "http://localhost:3000/login.html" );
+		modal.open(	{content: $("<p class='txt-modal'>Registro Exitoso! <br> Bienvenido "+ json.name +"</p>")}, "http://localhost:3000/#login" );
 	}
 
 });
