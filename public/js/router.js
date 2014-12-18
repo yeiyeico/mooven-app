@@ -24,32 +24,92 @@ window.Router = (function(module){
     element.show();
   }
 
-  var loadDefault = function(){
+  var loadDefaultUserpanel = function(){
     loadCreateItinerary();
+  }
+
+  var loadHome = function(){
+    var element = $('#main-home');
+    $('.route').hide();
+    element.show();
+  };
+
+// routes for home section registers and login
+
+  var loadCompanyForm = function(){
+    var element = $('#register_company');
+    $('.route').hide();
+    element.show();
+  };
+
+  var loadEmployeeForm = function(){
+    var element = $('#register_employee');
+    $('.route').hide();
+    element.show();
+  };
+
+  var loadLogin = function(){
+    var element = $('#login-home');
+    $('.route').hide();
+    element.show();
+  };
+
+  var loadDefaultHome = function(){
+      loadHome();
   }
 
   module.observeLinks = function(){
     $('.route-link').click(function(event){
       event.preventDefault();
-      module.run(this.href);
+      module.runUserpanel(this.href);
       $('.route-link').removeClass('active'); 
       $(this).addClass('active');
     })
   };
 
-  module.run = function(path){
+  module.runUserpanel = function(path){
     switch(route(path)){
       case 'create':
-      loadCreateItinerary()
+        loadCreateItinerary();
       break;
       case 'list':
-      loadListRoutes();
+        loadListRoutes();
       break;
       default:
-      loadDefault()
+        loadDefaultUserpanel();
       break;
     }
+  };
+    
+  module.activeSectionHome = function(){
+    $('.home-route').click(function(event){
+      event.preventDefault();
+      module.runHome(this.href);
+      $('.home-route').removeClass('active'); 
+      $(this).addClass('active');
+    })
+  };
 
+  module.runHome = function(path){
+    switch(route(path)){
+      case 'index':
+        loadHome();
+      break;
+      case 'login':
+        loadLogin();
+      break;
+      case 'company':
+        loadCompanyForm();
+      break;
+      case 'employee':
+        loadEmployeeForm();
+      break;
+      default:
+        loadDefaultHome();
+      break;
+    }
   }
+
   return module;
+
 })(window.Router || {});

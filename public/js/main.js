@@ -1,31 +1,19 @@
 
 $(function(){
-	Router.run();
-	Router.observeLinks()
-});
-
-$('#register_company, #register_employee').hide();
-$("ol.sub-nav").hide();
-
-$('#home_btn').click(function(){
-	$('#register_company, #register_employee').hide();
-	$('#main_home').show();
+	Router.runHome();
+	Router.activeSectionHome();
 });
 
 
-$('#company_register').click(function(){
-	$('#main_home, #register_employee').hide();
+$('#home_regitercompany').click(function(){
+	$('#main-home, #register_employee, #login-home').hide();
 	$('#register_company').show();
 });
 
-$('#employee_register').click(function(){
-	$('#main_home, #register_company').hide();
-	$('#register_employee').show();
-});
 
-$('#login_btn').click(function(){
-	$('#main_home, #register_company, #register_employee').hide();
-	$('#login').show();
+$('#btn_loginemployee').click(function(){
+	$('#main-home, #register_company, #register_employee').hide();
+	$('#login-home').show();
 });
 
 $("#regiter_btn").mouseover(function(){
@@ -35,7 +23,6 @@ $("#regiter_btn").mouseover(function(){
 $("ol.sub-nav, #main_nav").mouseleave(function(){
 	$("ol.sub-nav").slideUp('fast');
 });
-
 
 $("#company_register, #employee_register").click(function(){
 	$("ol.sub-nav").slideUp('fast');

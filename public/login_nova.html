@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mooven - Collaborative Routes</title>
+	<!-- css styesheets mooven -->
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/front.css">
+</head>
+<body>
+	<div id="tooltip_message_emaillogin"></div>
+	<div id="tooltip_message_passwordlogin"></div>
+	<!-- main header no login -->
+	<header id="main_header">
+		<h1 class="logo"><a href="index.html">MOOVEN</a></h1>
+		<nav class="main_nav">
+			<ol>
+				<li class ="item-menu"><a id="login_btn" class="active"	href="login.html">Login</a></li>
+				<li class="item-menu">
+					<a id="regiter_btn" href="#">Register</a>
+					<ol class="sub-nav">
+						<li class="item-submenu"><a href="#" id="company_register">Company</a></li>
+						<li class="item-submenu"><a href="#" id="employee_register">Employee</a></li>
+					</ol>
+				</li>
+			</ol>
+		</nav>
+	</header>
+	<!-- main home section -->
+	<section id="login" class="middle">
+		<figure class="logoMooven_inside"><img src="images/logo.png"/></figure>
+		<form id="form_login" name="login" method="POST" action="">
+			<label>Company:</label>
+			<select class="form-select" id="login_company" name="company_database">
+			  <option value="value1">company name 1</option>
+			</select>
+			<label>E-mail:</label>
+			<input class="text_field" type="email" id="login_email" name="emaillogin" onblur="emailValidate(this)" >
+			<label>Password:</label>
+			<input class="text_field" type="password" id="login_password" name="passwordlogin" onblur="passwordValidate(this)" >
+			<button type="submit" class="generic_submit">LOGIN</button>
+		</form>
+	</section>
+
+	<!-- scripts -->
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache.min.js"></script>
+
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/formValidation/validation.js"></script>
+	<script type="text/javascript" src="js/formValidation/login_validation.js"></script>
+	<script type="text/javascript" src="js/router.js"></script>
+</body>
+</html>

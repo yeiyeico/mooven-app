@@ -7,41 +7,44 @@
 	<link rel="stylesheet" type="text/css" href="css/front.css">
 </head>
 <body>
+	<!-- tooltip message forms -->
 	<div id="tooltip_message_name"></div>
 	<div id="tooltip_message_address"></div>
 	<div id="tooltip_message_email"></div>
 	<div id="tooltip_message_password" ></div>
 	<div id="tooltip_message_lastname" ></div>
+	<div id="tooltip_message_emaillogin"></div>
+	<div id="tooltip_message_passwordlogin"></div>
 	<!-- main header no login -->
 	<header id="main_header">
-		<h1 class="logo"><a href="index.html">MOOVEN</a></h1>
+		<h1 class="logo"><a class="home-route" href="#index">MOOVEN</a></h1>
 		<nav class="main_nav">
 			<ol>
-				<li class ="item-menu"><a id="login_btn" 	href="login.html">Login </a></li>
+				<li class ="item-menu"><a id="login_btn" class="home-route"	href="#login">Login </a></li>
 				<li class="item-menu">
 					<a id="regiter_btn" href="#">Register</a>
 					<ol class="sub-nav">
-						<li class="item-submenu"><a href="#" id="company_register">Company</a></li>
-						<li class="item-submenu"><a href="#" id="employee_register">Employee</a></li>
+						<li class="item-submenu"><a class="home-route" href="#company" id="company_register">Company</a></li>
+						<li class="item-submenu"><a class="home-route" href="#employee" id="employee_register">Employee</a></li>
 					</ol>
 				</li>
 			</ol>
 		</nav>
 	</header>
 	<!-- main home section -->
-	<section id="main_home" class="middle">
+	<section id="main-home" class="route middle">
 		<header>
 			<figure class="icoMooven"><img src="images/logo.png"/></figure>
 			<div class="green_line"></div>
 		</header>
 		<h2 class="txt_titles">The collaborative way to move<br/> your employees in the city.</h2>
 		<footer class="footer_home">
-			<a class="generic_btn" href="#">Register your company now!!</a>
+			<a class="generic_btn" id="home_regitercompany" href="#">Register your company now!!</a>
 			<p class="txt_bottom_btn">trial version 1 month</p>	
 		</footer>
 	</section>
 	<!-- end main section - register company section -->
-	<section id="register_company" class="middle">
+	<section id="register_company" class="route middle">
 		<article class="left_column">
 			<figure class="logoMooven_inside"><img src="images/logo.png"/></figure>
 			<h3 class="txt_inside_titles">Phasellus Molestie Magna Non Est Bibendum Non.</h3>
@@ -69,12 +72,12 @@
 		</article>
 	</section>
 	<!-- end register company section - register employee section -->
-	<section id="register_employee" class="middle">
+	<section id="register_employee" class="route middle">
 		<article class="left_column">
 			<figure class="logoMooven_inside"><img src="images/logo.png"/></figure>
 			<h3 class="txt_inside_titles">Phasellus Molestie Magna Non Est Bibendum Non.</h3>
 			<p class="txt_descrip">Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio. Proin quis tortor orci. ante, ac egestas est urna sit amet arcu.</p>
-			<a class="generic_btn" href="login.html">Log In as a Employee!</a>
+			<a class="generic_btn" id="btn_loginemployee" href="#">Log In as a Employee!</a>
 		</article>
 		<article class="right_column">
 			<h3 class="title_form">I'm a Employee!!</h3>
@@ -98,15 +101,30 @@
 			</form>
 		</article>
 	</section>
+	<!-- end register employee section - login section -->
+	<section id="login-home" class="route">
+		<figure class="logoMooven_inside"><img src="images/logo.png"/></figure>
+		<form id="form_login" name="login" method="POST" action="">
+			<label>Company:</label>
+			<select class="form-select" id="login_company" name="company_database">
+			  <option value="value1">company name 1</option>
+			</select>
+			<label>E-mail:</label>
+			<input class="text_field" type="email" id="login_email" name="emaillogin" onblur="emailValidate(this)" >
+			<label>Password:</label>
+			<input class="text_field" type="password" id="login_password" name="passwordlogin" onblur="passwordValidate(this)" >
+			<button type="submit" class="generic_submit">LOGIN</button>
+		</form>
+	</section>
 
 	<!-- scripts -->
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache.min.js"></script>
-
-	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>	
 	<script type="text/javascript" src="js/formValidation/validation.js"></script>
 	<script type="text/javascript" src="js/formValidation/company_validation.js"></script>
 	<script type="text/javascript" src="js/formValidation/employee_validation.js"></script>
+	<script type="text/javascript" src="js/formValidation/login_validation.js"></script>
+	<script type="text/javascript" src="js/router.js"></script>
 	<script type="text/javascript" src="js/lightbox.js"></script>
 	
 </body>
