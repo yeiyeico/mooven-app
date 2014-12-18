@@ -38,8 +38,6 @@ class ItinerariesController < ApplicationController
     @itinerary = Itinerary.find(params[:id])
   end
 
-
-
   def newpoint (address)
     @point = Point.new
     @point.address = address

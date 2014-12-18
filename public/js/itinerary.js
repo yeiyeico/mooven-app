@@ -29,7 +29,7 @@ function saveItinerary(event){
 			document.getElementById('itinerary_name').value - "";
 			document.getElementById('seats').value = "";
 			window.initialize(point_lat, point_lng);
-			modal.open( {content: $("<p class='txt-modal'>You create a new route! if you want to see all your routes click in 'view all may routes'</p>")}, "http://localhost:3000/userpanel.html#list" );
+			modal.open( {content: $("<p class='txt-modal'>You create a new route! if you want to see all your routes click in 'view all may routes'</p>")}, "http://localhost:3000/userpanel#list" );
 		}).fail(function(error){
 			console.log(error);
 	});

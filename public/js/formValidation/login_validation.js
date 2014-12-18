@@ -21,8 +21,10 @@ $('#form_login').bind('submit', function(event){
    
    json_company = JSON.parse(localStorage.getItem('employeeForm'));
 
-   if (json_company.emailemployee === "" && json_company.passwordemployee === "") {
+   if (json_company.emailemployee == "" && json_company.passwordemployee == "") {
       console.log("no field"); 
+      emailValidate(c_email);
+      passwordValidate(c_password);
    } else if(json_company.emailemployee === c_email.value && json_company.passwordemployee === c_password.value){
       $.ajax({
          type: "GET",
@@ -33,6 +35,7 @@ $('#form_login').bind('submit', function(event){
       localStorage.setItem('loginForm', JSON.stringify(json));
       window.location.href = "http://localhost:3000/userpanel.html";
    }else{
+      modal.open( {content: $("<p class='txt-modal'>Something is wrong! check your email and/or password and try again!</p>")}, "http://localhost:3000/#login" );
       console.log("no match"); 
    }
 

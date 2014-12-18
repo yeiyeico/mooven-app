@@ -1,79 +1,126 @@
 body{
-  background:url('../images/bg_texture.png') repeat 0 0;
-  font-family            : 'HelveticaThin', sans-serif;
-  color                  : #FFF;
-  font-weight            : normal;
-  font-size              : 1em;
+  background :url('../images/bg_02.png') repeat 0 0;
+  font-family: 'HelveticaThin', sans-serif;
+  color      : #444444;
+  font-weight: normal;
+  font-size  : 1em;
+}
+
+
+#main-userpanel{
+  clear: both;
 }
 
 
 header#user_header{
-  background-color: rgba(123, 123, 123, 0.3);
-  width           : 100%;
-  height          : 60px;
+  background-color  : #EDECEC;
+  -webkit-box-shadow: 0px 1px 1px 0px rgba(50, 50, 55, 0.3);
+  -moz-box-shadow   : 0px 1px 1px 0px rgba(50, 50, 55, 0.3);
+  box-shadow        : 0px 1px 1px 0px rgba(50, 50, 55, 0.3);
+  width             : 100%;
+  height            : 60px;
 }
 
+h1.logo_inside{
+  background: url('../images/logo_v2.png') no-repeat 0 -5px;
+  width: 178px;
+  height:111px;
+  text-indent: -9999px;
+  float: left;
+}
+
+.user-header{
+  padding:30px;
+  border-bottom: 1px solid #D7D7D7;
+  text-align: center;
+}
+
+.user_nav{
+  float: left;
+  margin-top: 15px;
+  margin-left: 30px;
+}
+
+li.item-usernav{
+  float: left;
+}
+
+.item-usernav a{
+  font-family    : 'HelveticaRoman';
+  color          : #444;
+  display        : block;
+  padding        : 10px 20px;
+  text-decoration: none;
+  font-size      : 14px;
+  font-weight    : normal;
+
+}
+
+a.btn_create{
+  background: url('../images/ico_create.png') no-repeat 0 5px;
+}
+
+a.btn_viewroutes{
+  background: url('../images/ico_view.png') no-repeat 0 6px;
+}
+
+.item-usernav a:hover, .item-usernav a.active{
+  color: #066F2F;
+  text-decoration: underline;
+}
+
+.login-info{
+  float: right;
+  margin-top: 5px;
+}
+
+.avatar-top{
+  float: right;
+}
 
 .avatar-top img{
   border-radius: 50%;
   border: 1px solid #5B5D58;
 }
 
-.user-header{
-  padding:30px;
-  text-align: center;
-  border-bottom: 1px solid #323232;
+.txt-info{
+  float: left;
+  margin: 12px;
+  text-align: right;
+  font-family: 'HelveticaRoman';
 }
 
-.user_nav{
-  float: right;
+h5.session_name{
+  letter-spacing: -0.5px;
+}
+
+.txt-info a{
+  font-size: 12px;
+  color: #323232;
 }
 
 h2.title-user{
   font-size: 36px;
-  color: #89E90C;
+  color: #354005;
 }
 
 h3.descrip-user{
   font-size: 24px;
 }
 
-.userpanel-content{
-  margin-top: 40px;
-  overflow: hidden;
+#content-create-route{
+  width         : 800px;
+  margin        : 0 auto;
+  text-align    : center;
+  padding-top   : 40px;
+  padding-bottom: 160px;
 }
 
-
-.main-nav-left{
-  width: 200px;
-  float: left;
-
-}
-
-.content-right{
-  width: 780px;
-  float: left;
-  padding-left: 30px;
-  border-left: 1px solid #5B5D58;
-}
-
-li.item-usernav{
-  text-align: right;
-}
-
-.item-usernav a{
-  display        : block;
-  padding        : 10px;
-  text-decoration: none;
-  color          : #FFF;
-  font-size      : 14px;
-  font-weight    : normal;
-  letter-spacing : 1px;
-
-}
-
-.item-usernav a:hover, .item-usernav a.active{
-  background-color: rgba(170,232,57, .2);
+#content-list-routes{
+  width         : 800px;
+  margin        : 0 auto;
+  padding       : 40px;
+  padding-bottom: 160px;
 }
 
 input#itinerary_name{
@@ -82,7 +129,7 @@ input#itinerary_name{
   border       : none;
   border-bottom: 1px solid grey;
   padding      : 10px 0;
-  color        : #FFF;
+  color        : #444;
   outline-style: none;
   font-size    : 19px;
   padding-left : 10px;
@@ -117,10 +164,12 @@ label.endpoint{
 }
 
 input.routefield{
-  width: 225px;
-  height: 30px;
-  font-size: 14px;
-  padding-left: 5px;
+  width           : 225px;
+  height          : 30px;
+  font-size       : 14px;
+  padding-left    : 5px;
+  background-color: rgb(211, 211, 211);
+  border          : none;
 }
 
 .route-map{
@@ -131,7 +180,7 @@ input.routefield{
 }
 
 #container-map{
-  width:700px ;
+  width:100%;
   height: 330px;
   margin-top: 20px; 
 }
@@ -164,7 +213,8 @@ li.itinerary-item{
 }
 
 h1.item-name{
-  color      : #AAE839;
+  font-family: 'HelveticaRoman';
+  color      : #2F3F00;
   font-size  : 23px;
   font-weight: normal;
   font-style : normal;
@@ -215,4 +265,37 @@ a.deleteitinerary_btn:hover{
   opacity: 1;
 }
 
+.other_submit{
+  -webkit-appearance: none;
+  font-family: 'helveticaRoman', sans-serif;
+  border: 1px solid rgb(114, 129, 106);
+  padding: 10px 30px 5px;
+  background-color: rgba(45, 69, 18, 1);
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.other_submit:focus{
+  outline:none;
+}
+
+
+#user-footer{
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  background-color  : rgb(237, 236, 236);
+  padding           : 20px;
+  text-align        : center;
+  font-size         : 17px;
+  font-family       : helveticaRoman;
+  letter-spacing    : -0.5px;
+  color             : rgb(5, 118, 118);
+  box-shadow        : 0px 1px 4px #626262;
+  -webkit-box-shadow: 0px 1px 4px #626262;
+  -moz-box-shadow   : 0px 1px 4px #626262;
+
+}
 

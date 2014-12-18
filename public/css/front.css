@@ -237,13 +237,13 @@ h3.title_form{
 
 #tooltip_message_emaillogin{
   position: absolute;
-  top     : 310px;
+  top     : 338px;
   right   : 550px;
 }
 
 #tooltip_message_passwordlogin{
   position: absolute;
-  top     : 378px;
+  top     : 408px;
   right   : 550px;
 }
 

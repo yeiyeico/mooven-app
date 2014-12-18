@@ -13,15 +13,28 @@
 	<div id="tooltip_message_email"></div>
 	<div id="tooltip_message_password"></div>
 	<!-- main header no login -->
-	<header id="user_header">
-		<h1 class="logo"><a href="#">MOOVEN</a></h1>
-		<nav class="user_nav">
-			<ol>
-				<li class ="item-menu"><figure class="avatar-top"><img src="images/avatar50x50.jpg"/></figure></li>
-				<li class ="item-menu">Angela pinzon G</li>
-				<li class ="item-menu"><a href="index.html#login">Logout</a></li>
-			</ol>
-		</nav>
+	<header id="user_header" class="clearfix">
+		<div class="middle">
+			<h1 class="logo_inside"><a href="#">MOOVEN</a></h1>
+			<nav class="user_nav">
+				<ol>
+					<li class="item-usernav">
+						<a class="route-link active btn_create" href="#create">Create route</a>
+					</li>
+					<li class="item-usernav">
+						<a class='route-link btn_viewroutes' href="#list">All my routes</a>
+					</li>
+				</ol>
+			</nav>
+			<div class="login-info">
+				<figure class="avatar-top"><img src="images/avatar50x50.jpg"/></figure>
+				<div class="txt-info">
+					<h5 class="session_name"></h5>
+					<a href="index.html#login">Logout</a>
+				</div>
+			</div>
+
+		</div>
 	</header>
 	<!-- main home section -->
 	<section id="main-userpanel" class="middle">
@@ -29,66 +42,54 @@
 			<h2 class="title-user"></h2>
 			<h3 class="descrip-user">it’s time for create your first route »</h3>
 		</header>
-		<article class="userpanel-content">
-			<nav class="main-nav-left">
-					<ol>
-						<li class="item-usernav">
-						  <a class="route-link active" href="#create">Create a route »</a>
-						</li>
-						<li class="item-usernav">
-						  <a class='route-link' href="#list">View all my routes »</a>
-						</li>
-						<!-- <li class="item-usernav">
-							<a class='route-link' href="#people">People in my routes »</a>
-						</li> -->
-					</ol>
-			</nav>
-			<div id="content-create-route" class="route content-right">
-				<form id="create-route-from">
-					<label>Route Name:</label>
-					<input type="text" id="itinerary_name" name="route_name" required>
-					<label>Available seats:</label>
-					<select id="seats" class="seats-available" name="seats">
-						<option value="1">1</option>
-						<option value="2">2</option>
-						<option value="3">3</option>
-						<option value="4">4</option>
-					</select>
-					<div class="dotted-line"></div>
-					<label class="startpoint">Start Point</label>
-					<input class="routefield" type="text" id="point_a" name="point_a">
-					<label class="endpoint">End Point</label>
-					<input class="routefield" type="text" id="point_b" name="point_b">					
-					<div id="container-map"></div>
-					<button type="submit" class="generic_submit" id="submit_route">CREATE ROUTE</button>
-				</form>
-			</div>
-			<div id="content-list-routes" class="route content-right" >
-				<ol class="all-routes">
-				</ol>
-			</div>
-			<div id="load_templates"></div>
-
+		<article id="content-create-route" class="route">			
+			<form id="create-route-from">
+				<label>Route Name:</label>
+				<input type="text" id="itinerary_name" name="route_name" required>
+				<label>Available seats:</label>
+				<select id="seats" class="seats-available" name="seats">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+				</select>
+				<div class="dotted-line"></div>
+				<label class="startpoint">Start Point</label>
+				<input class="routefield" type="text" id="point_a" name="point_a">
+				<label class="endpoint">End Point</label>
+				<input class="routefield" type="text" id="point_b" name="point_b">					
+				<div id="container-map"></div>
+				<button type="submit" class="other_submit" id="submit_route">CREATE ROUTE</button>
+			</form>
+		</article>
+		<article id="content-list-routes" class="route" >		
+			<ol class="all-routes">
+			</ol>
 		</article>
 	</section>
 
-   <script type="text/html" id='itinerary-template'>
-   	<li class="itinerary-item">
-   	   <article>
-   	      <header>
-   	         <h1 class="item-name">{{ itinerary_name }}</h1>
-   	         <h5 class="txt-seats">Available seats: {{ avaliable_seats }} </h5>
-   	      </header>
-   	      <div class="start_point_show">{{ start_point.address }}</div>
-   	      <div class="end_point_show">{{ end_point.address }}</div>
-   	      <footer>
-   	         <figure><img src="images/thumb_map.jpg" /></figure>
-   	      </footer>
-   	   </article>
-   	   <a href="#" class="deleteitinerary_btn" data-id = {{id }}> Delete Route</a> 
-   	</li>
-   </script>
+	<footer id="user-footer">
+		<h6>Designed and Developed by yeiyei.co</h6>
+	</footer>
+
+	<script type="text/html" id='itinerary-template'>
+		<li class="itinerary-item">
+			<article>
+				<header>
+					<h1 class="item-name">{{ itinerary_name }}</h1>
+					<h5 class="txt-seats">Available seats: {{ avaliable_seats }} </h5>
+				</header>
+				<div class="start_point_show">{{ start_point.address }}</div>
+				<div class="end_point_show">{{ end_point.address }}</div>
+				<footer>
+					<figure><img src="images/thumb_map.jpg" /></figure>
+				</footer>
+			</article>
+			<a href="#" class="deleteitinerary_btn" data-id = {{id }}> Delete Route</a> 
+		</li>
+	</script>
 	<!-- scripts -->
+	<script type="text/javascript" src="js/thirds/jquery-1.11.1.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
 	<script src="http://maps.googleapis.com/maps/api/js"></script>

@@ -21,6 +21,7 @@ window.Router = (function(module){
   var loadListRoutes = function(){
     var element = $('#content-list-routes');
     $('.route').hide();
+    $('.descrip-user').hide();
     element.show();
   }
 
