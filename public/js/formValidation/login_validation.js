@@ -21,9 +21,9 @@ $('#form_login').bind('submit', function(event){
    
    json_company = JSON.parse(localStorage.getItem('employeeForm'));
 
-   if (json_company.email === "" && json_company.password === "") {
+   if (json_company.emailemployee === "" && json_company.passwordemployee === "") {
       console.log("no field"); 
-   } else if(json_company.email === c_email.value && json_company.password === c_password.value){
+   } else if(json_company.emailemployee === c_email.value && json_company.passwordemployee === c_password.value){
       $.ajax({
          type: "GET",
          url: "/form.json",

@@ -5,14 +5,20 @@
 	<!-- css styesheets mooven -->
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="css/front.css">
+	<link rel="stylesheet" type="text/css" href="css/lightbox.css">
 </head>
 <body>
 	<!-- tooltip message forms -->
+	<!-- tooltip company -->
 	<div id="tooltip_message_name"></div>
 	<div id="tooltip_message_address"></div>
 	<div id="tooltip_message_email"></div>
 	<div id="tooltip_message_password" ></div>
+	<!-- tooltip employee -->
 	<div id="tooltip_message_lastname" ></div>
+	<div id="tooltip_message_emailemployee"></div>
+	<div id="tooltip_message_passwordemployee"></div>
+	<!-- tooltip login -->
 	<div id="tooltip_message_emaillogin"></div>
 	<div id="tooltip_message_passwordlogin"></div>
 	<!-- main header no login -->
@@ -20,9 +26,9 @@
 		<h1 class="logo"><a class="home-route" href="#index">MOOVEN</a></h1>
 		<nav class="main_nav">
 			<ol>
-				<li class ="item-menu"><a id="login_btn" class="home-route"	href="#login">Login </a></li>
+				<li class ="item-menu"><a id="login_btn" class="home-route"	href="#login">LOGIN </a></li>
 				<li class="item-menu">
-					<a id="regiter_btn" href="#">Register</a>
+					<a id="regiter_btn" href="#">REGISTER</a>
 					<ol class="sub-nav">
 						<li class="item-submenu"><a class="home-route" href="#company" id="company_register">Company</a></li>
 						<li class="item-submenu"><a class="home-route" href="#employee" id="employee_register">Employee</a></li>
@@ -47,8 +53,8 @@
 	<section id="register_company" class="route middle">
 		<article class="left_column">
 			<figure class="logoMooven_inside"><img src="images/logo.png"/></figure>
-			<h3 class="txt_inside_titles">Phasellus Molestie Magna Non Est Bibendum Non.</h3>
-			<p class="txt_descrip">Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio. Proin quis tortor orci. ante, ac egestas est urna sit amet arcu.</p>
+			<h3 class="txt_inside_titles">The best way for your employees<br>for sharing their cars.</h3>
+			<p class="txt_descrip">Imagine all your employees arrive at the same hour, with happy face and energy, with <strong>Mooven</strong> it's possible, register yout company now! and see the benefits.</p>
 		</article>
 		<article class="right_column">
 			<h3 class="title_form">I'm a company!!</h3>
@@ -58,10 +64,10 @@
 				<label>Address:</label>
 				<input class="text_field" type="text" id="company_address" name="address" onblur="basicFieldValidate(this)" >
 				<label>Number of Employees:</label>
-				<input type="radio" name="number_employees"   value="10" checked><span>10 - 30</span>
-				<input type="radio" name="number_employees"   value="30"><span>30 - 50</span>
-				<input type="radio" name="number_employees"   value="50"><span>50 - 80</span>
-				<input type="radio" name="number_employees"  value="100"><span>  + 100</span>
+				<input type ="radio" name="number_employees"   value="10" checked><span class= "txt_inputradio">10 - 30</span>
+				<input type ="radio" name="number_employees"   value="30"><span class= "txt_inputradio">30 - 50</span>
+				<input type ="radio" name="number_employees"   value="50"><span class= "txt_inputradio">50 - 80</span>
+				<input type ="radio" name="number_employees"  value="100"><span class= "txt_inputradio">  + 100</span>
 				<label>E-mail:</label>
 				<input class="text_field" type="email" id="company_email" name="email" onblur="emailValidate(this)" >
 				<label>Password:</label>
@@ -90,13 +96,14 @@
 				<select class="form-select" name="company_database">
 				  <option value="value1">Mooven</option>
 				</select>
-				<label>E-mail:</label>
-				<input class="text_field" type="email" id="employee_email" name="email" onblur="emailValidate(this)" >
-				<label>Password:</label>
-				<input class="text_field" type="password" id="employee_password" name="password" onblur="passwordValidate(this)" >
 				<label>Are you looking for:</label>
-				<input type="radio" name="number_employees"   value="10" checked><span>I have a car</span>
-				<input type="radio" name="number_employees"   value="30"><span>I need a car</span>
+					<input type ="radio" name="number_employees"   value="I have a car" checked><span class= "txt_inputradio">I have a car</span>
+					<input type ="radio" name="number_employees"   value="I need a car"><span class= "txt_inputradio">I need a car</span>
+				<label>E-mail:</label>
+				<input class="text_field" type="email" id="employee_email" name="emailemployee" onblur="emailValidate(this)" >
+				<label>Password:</label>
+				<input class="text_field" type="password" id="employee_password" name="passwordemployee" onblur="passwordValidate(this)" >
+				
 				<button type="submit" class="generic_submit" >REGISTER</button>
 			</form>
 		</article>

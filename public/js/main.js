@@ -17,11 +17,13 @@ $('#btn_loginemployee').click(function(){
 });
 
 $("#regiter_btn").mouseover(function(){
-	$("ol.sub-nav").slideToggle('fast');   
+	$("ol.sub-nav").slideToggle('fast'); 
+   $(this).css('background-color','rgba(123, 123, 123, 0.2)')  
 });
 
 $("ol.sub-nav, #main_nav").mouseleave(function(){
 	$("ol.sub-nav").slideUp('fast');
+   $('#regiter_btn').css('background-color','transparent') 
 });
 
 $("#company_register, #employee_register").click(function(){

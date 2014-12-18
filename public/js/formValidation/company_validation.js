@@ -38,7 +38,7 @@ $('#form_company').bind('submit', function(event){
 		});
 
 		localStorage.setItem('companyForm', JSON.stringify(json));
-		modal.open(	{content: $("<p class='txt-modal'>Registro Exitoso! <br> Bienvenido "+ json.name +"</p>")}, "http://localhost:3000/#login" );
+		modal.open(	{content: $("<p class='txt-modal'>Registro Exitoso! <br> Bienvenido "+ json.name +"</p>")}, "http://localhost:3000/#employee" );
 	}
 
 });
