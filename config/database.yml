@@ -21,9 +21,9 @@ default: &default
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
 
-development:
-  <<: *default
-  database: moovenApp_development
+# development:
+#   <<: *default
+#   database: moovenApp_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -80,8 +80,13 @@ development:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+
 production:
-  <<: *default
-  database: moovenApp_production
-  username: moovenApp
-  password: <%= ENV['MOOVENAPP_DATABASE_PASSWORD'] %>
+  url:  <%= ENV["DATABASE_URL"] %>
+  pool: <%= ENV["DB_POOL"] || ENV['MAX_THREADS'] || 5 %>
+  
+# production:
+#   <<: *default
+#   database: moovenApp_production
+#   username: moovenApp
+#   password: <%= ENV['MOOVENAPP_DATABASE_PASSWORD'] %>
