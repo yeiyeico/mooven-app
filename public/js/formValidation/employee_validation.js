@@ -41,7 +41,8 @@ $('#form_employee').bind('submit', function(event){
       });
 
       localStorage.setItem('employeeForm', JSON.stringify(json));
-      modal.open( {content: $("<p class='txt-modal'>Registro Exitoso! <br> Bienvenido "+ json.name +"</p>")}, "http://localhost:3000/index#login" );
+      modal.open( {content: $("<p class='txt-modal'>Something is wrong! check your email and/or password and try again!</p>")}, "https://moovenapp.herokuapp.com/#login" );
+      // modal.open( {content: $("<p class='txt-modal'>Registro Exitoso! <br> Bienvenido "+ json.name +"</p>")}, "http://localhost:3000/index#login" );
    }
 
 });

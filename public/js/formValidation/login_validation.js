@@ -33,9 +33,11 @@ $('#form_login').bind('submit', function(event){
          dataType: "json",
       });
       localStorage.setItem('loginForm', JSON.stringify(json));
-      window.location.href = "http://localhost:3000/userpanel.html";
+      window.location.href = "https://moovenapp.herokuapp.com/userpanel.html";
+      // window.location.href = "http://localhost:3000/userpanel.html";
    }else{
-      modal.open( {content: $("<p class='txt-modal'>Something is wrong! check your email and/or password and try again!</p>")}, "http://localhost:3000/#login" );
+      modal.open( {content: $("<p class='txt-modal'>Something is wrong! check your email and/or password and try again!</p>")}, "https://moovenapp.herokuapp.com/#login" );
+      // modal.open( {content: $("<p class='txt-modal'>Something is wrong! check your email and/or password and try again!</p>")}, "http://localhost:3000/#login" );
       console.log("no match"); 
    }
 
